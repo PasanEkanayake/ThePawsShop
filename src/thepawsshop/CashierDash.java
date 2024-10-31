@@ -4,10 +4,8 @@
  */
 package thepawsshop;
 
-/**
- *
- * @author Pasan Ekanayake
- */
+import javax.swing.JFrame;
+
 public class CashierDash extends javax.swing.JFrame {
 
     /**
@@ -15,6 +13,7 @@ public class CashierDash extends javax.swing.JFrame {
      */
     public CashierDash() {
         initComponents();
+        setExtendedState(JFrame.MAXIMIZED_BOTH);
     }
 
     /**
