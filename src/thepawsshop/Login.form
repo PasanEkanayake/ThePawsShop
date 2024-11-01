@@ -125,13 +125,13 @@
                   <EmptySpace min="-2" pref="152" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="2" attributes="0">
                       <Component id="jLabel1" alignment="2" min="-2" max="-2" attributes="0"/>
-                      <Component id="jTextField1" alignment="2" min="-2" pref="360" max="-2" attributes="0"/>
+                      <Component id="uName" alignment="2" min="-2" pref="360" max="-2" attributes="0"/>
                       <Component id="jLabel3" alignment="2" min="-2" max="-2" attributes="0"/>
-                      <Component id="jTextField2" alignment="2" min="-2" pref="360" max="-2" attributes="0"/>
-                      <Component id="jButton1" alignment="2" min="-2" max="-2" attributes="0"/>
+                      <Component id="login" alignment="2" min="-2" max="-2" attributes="0"/>
+                      <Component id="pWord" alignment="1" min="-2" pref="360" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Component id="jCheckBox2" min="-2" max="-2" attributes="0"/>
+                  <Component id="showHide" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
               </Group>
           </Group>
@@ -142,16 +142,16 @@
                   <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
                   <Component id="jLabel1" min="-2" pref="32" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="jTextField1" min="-2" pref="36" max="-2" attributes="0"/>
+                  <Component id="uName" min="-2" pref="36" max="-2" attributes="0"/>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Component id="jLabel3" min="-2" pref="32" max="-2" attributes="0"/>
                   <EmptySpace min="-2" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="jTextField2" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
-                      <Component id="jCheckBox2" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="showHide" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="pWord" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
-                  <Component id="jButton1" min="-2" max="-2" attributes="0"/>
+                  <Component id="login" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="131" max="-2" attributes="0"/>
               </Group>
           </Group>
@@ -169,9 +169,7 @@
             <Property name="text" type="java.lang.String" value="USERNAME"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="jTextField1">
-        </Component>
-        <Component class="javax.swing.JTextField" name="jTextField2">
+        <Component class="javax.swing.JTextField" name="uName">
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel3">
           <Properties>
@@ -184,12 +182,18 @@
             <Property name="text" type="java.lang.String" value="PASSWORD"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JButton" name="jButton1">
+        <Component class="javax.swing.JButton" name="login">
           <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Rockwell" size="12" style="0"/>
+            </Property>
             <Property name="text" type="java.lang.String" value="LOGIN"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="loginActionPerformed"/>
+          </Events>
         </Component>
-        <Component class="javax.swing.JCheckBox" name="jCheckBox2">
+        <Component class="javax.swing.JCheckBox" name="showHide">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Rockwell" size="12" style="0"/>
@@ -199,6 +203,11 @@
             </Property>
             <Property name="text" type="java.lang.String" value="Show Password"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="showHideActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JPasswordField" name="pWord">
         </Component>
       </SubComponents>
     </Container>

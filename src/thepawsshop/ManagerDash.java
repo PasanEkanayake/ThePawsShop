@@ -4,6 +4,8 @@
  */
 package thepawsshop;
 
+import javax.swing.JFrame;
+
 /**
  *
  * @author Pasan Ekanayake
@@ -15,6 +17,7 @@ public class ManagerDash extends javax.swing.JFrame {
      */
     public ManagerDash() {
         initComponents();
+        setExtendedState(JFrame.MAXIMIZED_BOTH);
     }
 
     /**
