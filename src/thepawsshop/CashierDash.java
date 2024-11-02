@@ -33,7 +33,7 @@ public class CashierDash extends javax.swing.JFrame {
         jPanel6 = new javax.swing.JPanel();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        searchProducts = new javax.swing.JButton();
         logout = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -121,9 +121,14 @@ public class CashierDash extends javax.swing.JFrame {
             }
         });
 
-        jButton3.setFont(new java.awt.Font("Rockwell", 0, 14)); // NOI18N
-        jButton3.setText("Search Products");
-        jButton3.setToolTipText("");
+        searchProducts.setFont(new java.awt.Font("Rockwell", 0, 14)); // NOI18N
+        searchProducts.setText("Search Products");
+        searchProducts.setToolTipText("");
+        searchProducts.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                searchProductsActionPerformed(evt);
+            }
+        });
 
         logout.setFont(new java.awt.Font("Rockwell", 0, 14)); // NOI18N
         logout.setText("Logout");
@@ -141,7 +146,7 @@ public class CashierDash extends javax.swing.JFrame {
                 .addGap(106, 106, 106)
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel6Layout.createSequentialGroup()
-                        .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(searchProducts, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(logout, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel6Layout.createSequentialGroup()
@@ -159,7 +164,7 @@ public class CashierDash extends javax.swing.JFrame {
                     .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(67, 67, 67)
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(searchProducts, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(logout, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(75, Short.MAX_VALUE))
         );
@@ -208,6 +213,11 @@ public class CashierDash extends javax.swing.JFrame {
         this.hide();
     }//GEN-LAST:event_logoutActionPerformed
 
+    private void searchProductsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchProductsActionPerformed
+        SearchProducts search = new SearchProducts();
+        search.setVisible(true);
+    }//GEN-LAST:event_searchProductsActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -247,7 +257,6 @@ public class CashierDash extends javax.swing.JFrame {
     private javax.swing.JButton back;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel4;
@@ -255,5 +264,6 @@ public class CashierDash extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel6;
     private javax.swing.JButton logout;
+    private javax.swing.JButton searchProducts;
     // End of variables declaration//GEN-END:variables
 }
