@@ -10,6 +10,8 @@ import javax.swing.JFrame;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableRowSorter;
 import javax.swing.RowFilter;
+import java.util.HashSet;
+import java.util.Set;
 
 /**
  *
@@ -30,6 +32,7 @@ public class AddProducts extends javax.swing.JFrame {
     public AddProducts() {
         initComponents();
         UpdateDB();
+        loadCategoriesFromDB();
     }
 
     public void UpdateDB(){
@@ -43,6 +46,24 @@ public class AddProducts extends javax.swing.JFrame {
         }
         catch (Exception ex){
             JOptionPane.showMessageDialog(this, "Database Connection Error.");
+        }
+    }
+    
+    private void loadCategoriesFromDB(){
+        try {
+            Class.forName("com.mysql.jdbc.Driver");
+            sqlConn = DriverManager.getConnection(dataConn, username, password);
+
+            String query = "SELECT DISTINCT Category FROM pet_supply";
+            pst = sqlConn.prepareStatement(query);
+            rs = pst.executeQuery();
+
+            while (rs.next()) {
+                String category = rs.getString("Category").trim();
+                categoryList.addItem(category);
+            }
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, "Error loading categories from database.");
         }
     }
     
@@ -172,6 +193,13 @@ public class AddProducts extends javax.swing.JFrame {
             }
         });
 
+        categoryList.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " " }));
+        categoryList.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                categoryListActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -195,9 +223,9 @@ public class AddProducts extends javax.swing.JFrame {
                             .addComponent(productWeight, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(productPrice, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addComponent(productCategory, javax.swing.GroupLayout.PREFERRED_SIZE, 330, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(productCategory, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(categoryList, 0, 0, Short.MAX_VALUE))))
+                                .addComponent(categoryList, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addComponent(jLabel11)
                         .addGap(18, 18, 18)
@@ -365,6 +393,11 @@ public class AddProducts extends javax.swing.JFrame {
         SearchProducts search = new SearchProducts();
         search.setVisible(true);
     }//GEN-LAST:event_searchProductsActionPerformed
+
+    private void categoryListActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_categoryListActionPerformed
+        String text = (String)categoryList.getSelectedItem();
+        productCategory.setText(text);
+    }//GEN-LAST:event_categoryListActionPerformed
 
     /**
      * @param args the command line arguments
