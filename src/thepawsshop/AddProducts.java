@@ -64,11 +64,11 @@ public class AddProducts extends javax.swing.JFrame {
         productID = new javax.swing.JTextField();
         productName = new javax.swing.JTextField();
         productDesc = new javax.swing.JTextField();
-        productPrice = new javax.swing.JTextField();
         productCategory = new javax.swing.JTextField();
-        productQuantity = new javax.swing.JTextField();
+        productWeight = new javax.swing.JTextField();
+        productPrice = new javax.swing.JTextField();
         jLabel11 = new javax.swing.JLabel();
-        productCategoryID = new javax.swing.JTextField();
+        productQuantity = new javax.swing.JTextField();
         enterDetails = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
         jLabel10 = new javax.swing.JLabel();
@@ -133,15 +133,15 @@ public class AddProducts extends javax.swing.JFrame {
 
         jLabel6.setFont(new java.awt.Font("Rockwell", 0, 14)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel6.setText("Product Price($):");
+        jLabel6.setText("Product Category:");
 
         jLabel7.setFont(new java.awt.Font("Rockwell", 0, 14)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel7.setText("Product Quantity:");
+        jLabel7.setText("Product Price ($):");
 
         jLabel8.setFont(new java.awt.Font("Rockwell", 0, 14)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel8.setText("Product Category:");
+        jLabel8.setText("Product Weight (g):");
 
         productID.setFont(new java.awt.Font("Rockwell", 0, 14)); // NOI18N
 
@@ -149,17 +149,17 @@ public class AddProducts extends javax.swing.JFrame {
 
         productDesc.setFont(new java.awt.Font("Rockwell", 0, 14)); // NOI18N
 
-        productPrice.setFont(new java.awt.Font("Rockwell", 0, 14)); // NOI18N
-
         productCategory.setFont(new java.awt.Font("Rockwell", 0, 14)); // NOI18N
 
-        productQuantity.setFont(new java.awt.Font("Rockwell", 0, 14)); // NOI18N
+        productWeight.setFont(new java.awt.Font("Rockwell", 0, 14)); // NOI18N
+
+        productPrice.setFont(new java.awt.Font("Rockwell", 0, 14)); // NOI18N
 
         jLabel11.setFont(new java.awt.Font("Rockwell", 0, 14)); // NOI18N
         jLabel11.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel11.setText("Product Category ID:");
+        jLabel11.setText("Product Quantity:");
 
-        productCategoryID.setFont(new java.awt.Font("Rockwell", 0, 14)); // NOI18N
+        productQuantity.setFont(new java.awt.Font("Rockwell", 0, 14)); // NOI18N
 
         enterDetails.setFont(new java.awt.Font("Rockwell", 0, 14)); // NOI18N
         enterDetails.setText("Enter Details");
@@ -179,7 +179,7 @@ public class AddProducts extends javax.swing.JFrame {
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addComponent(jLabel11)
                         .addGap(18, 18, 18)
-                        .addComponent(productCategoryID, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(productQuantity, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel5)
@@ -193,9 +193,9 @@ public class AddProducts extends javax.swing.JFrame {
                             .addComponent(productID, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(productName, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(productDesc, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(productPrice, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(productCategory, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(productQuantity, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(productWeight, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(productPrice, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addComponent(enterDetails, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -216,19 +216,19 @@ public class AddProducts extends javax.swing.JFrame {
                     .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(productPrice, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(productCategory, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(6, 6, 6)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(productQuantity, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(productPrice, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(productCategory, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(productWeight, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(productCategoryID, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(productQuantity, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(enterDetails, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -288,15 +288,23 @@ public class AddProducts extends javax.swing.JFrame {
         try{
             Class.forName("com.mysql.jdbc.Driver");
             sqlConn = DriverManager.getConnection(dataConn, username, password);
-            pst = sqlConn.prepareStatement("insert into pet_supply (Supply_ID, Name, Description, Price, Quantity, Category_ID) value (?,?,?,?,?,?)");
+            pst = sqlConn.prepareStatement("insert into pet_supply (ProductID, Name, Description, Category, Price, Weight, Quantity) value (?,?,?,?,?,?,?)");
             pst.setString(1, productID.getText());
             pst.setString(2, productName.getText());
             pst.setString(3, productDesc.getText());
-            pst.setString(4, productPrice.getText());
-            pst.setString(5, productQuantity.getText());
-            pst.setString(6, productCategoryID.getText());
+            pst.setString(4, productCategory.getText());
+            pst.setString(5, productPrice.getText());
+            pst.setString(6, productWeight.getText());
+            pst.setString(7, productQuantity.getText());
             pst.executeUpdate();
             JOptionPane.showMessageDialog(this, "Record ADDED successfully.");
+            productID.setText("");
+            productName.setText("");
+            productDesc.setText("");
+            productCategory.setText("");
+            productPrice.setText("");
+            productWeight.setText("");
+            productQuantity.setText("");
         }
         catch(Exception ex){
             JOptionPane.showMessageDialog(this, ex);
@@ -355,11 +363,11 @@ public class AddProducts extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JTextField productCategory;
-    private javax.swing.JTextField productCategoryID;
     private javax.swing.JTextField productDesc;
     private javax.swing.JTextField productID;
     private javax.swing.JTextField productName;
     private javax.swing.JTextField productPrice;
     private javax.swing.JTextField productQuantity;
+    private javax.swing.JTextField productWeight;
     // End of variables declaration//GEN-END:variables
 }
