@@ -127,7 +127,7 @@ public class ManagerDash extends javax.swing.JFrame {
         });
 
         jButton3.setFont(new java.awt.Font("Rockwell", 0, 14)); // NOI18N
-        jButton3.setText("Search All Products");
+        jButton3.setText("Search Products");
 
         logout.setFont(new java.awt.Font("Rockwell", 0, 14)); // NOI18N
         logout.setText("Logout");
@@ -211,7 +211,8 @@ public class ManagerDash extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
+        AddProducts products = new AddProducts();
+        products.setVisible(true);
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void logoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logoutActionPerformed
