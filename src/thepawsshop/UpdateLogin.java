@@ -1,4 +1,3 @@
-
 package thepawsshop;
 
 import java.awt.event.KeyEvent;
@@ -315,7 +314,63 @@ public class UpdateLogin extends javax.swing.JFrame {
     }//GEN-LAST:event_showHide2ActionPerformed
 
     private void newPWordKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_newPWordKeyPressed
-        // TODO add your handling code here:
+        if(evt.getKeyCode() == KeyEvent.VK_ENTER){
+            try{
+
+                Class.forName("com.mysql.jdbc.Driver");
+                sqlConn = DriverManager.getConnection(dataConn, username, password);
+                pst = sqlConn.prepareStatement("select * from users WHERE Username=? and Password=?");
+                String uNameTemp = oldUName.getText();
+                String pWordTemp = oldPWord.getText();
+                String newPass = newPWord.getText();
+                pst.setString(1, uNameTemp);
+                pst.setString(2, pWordTemp);
+                rs = pst.executeQuery();
+
+                if(rs.next() == false){
+                    JOptionPane.showMessageDialog(this, "User not found.\n\nPlease Try again.");
+                    oldUName.setText("");
+                    oldPWord.setText("");
+                    newPWord.setText("");
+                }
+                else{
+                    pst = sqlConn.prepareStatement("select * from users where Password=?");
+                    pst.setString(1, newPass);
+                    rs = pst.executeQuery();
+
+                    if(rs.next()){
+                        JOptionPane.showMessageDialog(this, "This password is already in use.\n\nPlease choose a different password.");
+                        newPWord.setText("");
+                    }
+                    else{
+                        pst = sqlConn.prepareStatement("update users set Password=? where Username=?");
+                        pst.setString(1, newPass);
+                        pst.setString(2, uNameTemp);
+
+                        int updateCount = pst.executeUpdate();
+
+                        if(updateCount > 0){
+                            JOptionPane.showMessageDialog(this, "Password updated successfully.");
+                            Login login = new Login();
+                            login.setVisible(true);
+                            this.dispose();
+                        }
+                        else{
+                            JOptionPane.showMessageDialog(this, "Password update failed. Please try again.");
+                            oldUName.setText("");
+                            oldPWord.setText("");
+                            newPWord.setText("");
+                        }
+                    }
+                }
+            }
+            catch(Exception ex){
+                JOptionPane.showMessageDialog(this, "Database connection failed:\n\n" + ex.getMessage());
+                oldUName.setText("");
+                oldPWord.setText("");
+                newPWord.setText("");
+            }
+        }
     }//GEN-LAST:event_newPWordKeyPressed
 
     /**

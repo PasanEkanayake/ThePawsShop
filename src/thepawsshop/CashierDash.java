@@ -36,6 +36,7 @@ public class CashierDash extends javax.swing.JFrame {
         jButton2 = new javax.swing.JButton();
         searchProducts = new javax.swing.JButton();
         newUser1 = new javax.swing.JButton();
+        updateLogin = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -152,6 +153,14 @@ public class CashierDash extends javax.swing.JFrame {
             }
         });
 
+        updateLogin.setFont(new java.awt.Font("Rockwell", 0, 14)); // NOI18N
+        updateLogin.setText("Update Login Details");
+        updateLogin.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                updateLoginActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
         jPanel6.setLayout(jPanel6Layout);
         jPanel6Layout.setHorizontalGroup(
@@ -160,7 +169,8 @@ public class CashierDash extends javax.swing.JFrame {
                 .addGap(106, 106, 106)
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(searchProducts, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE))
+                    .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
+                    .addComponent(updateLogin, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 116, Short.MAX_VALUE)
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
@@ -178,7 +188,9 @@ public class CashierDash extends javax.swing.JFrame {
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(searchProducts, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(newUser1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(133, Short.MAX_VALUE))
+                .addGap(28, 28, 28)
+                .addComponent(updateLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(65, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -235,6 +247,11 @@ public class CashierDash extends javax.swing.JFrame {
         update.setVisible(true);
     }//GEN-LAST:event_newUser1ActionPerformed
 
+    private void updateLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateLoginActionPerformed
+        UpdateLogin login = new UpdateLogin();
+        login.setVisible(true);
+    }//GEN-LAST:event_updateLoginActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -283,5 +300,6 @@ public class CashierDash extends javax.swing.JFrame {
     private javax.swing.JButton logout;
     private javax.swing.JButton newUser1;
     private javax.swing.JButton searchProducts;
+    private javax.swing.JButton updateLogin;
     // End of variables declaration//GEN-END:variables
 }

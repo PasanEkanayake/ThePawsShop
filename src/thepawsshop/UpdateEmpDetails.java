@@ -1,5 +1,6 @@
 package thepawsshop;
 
+import java.awt.event.KeyEvent;
 import java.sql.*;
 import javax.swing.JOptionPane;
 import javax.swing.JFrame;
@@ -7,7 +8,7 @@ import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableRowSorter;
 import javax.swing.RowFilter;
 
-public class NewUser extends javax.swing.JFrame {
+public class UpdateEmpDetails extends javax.swing.JFrame {
 
     private static final String username = "root";
     private static final String password = "";
@@ -19,9 +20,8 @@ public class NewUser extends javax.swing.JFrame {
     
     int n1, n2;
     
-    public NewUser() {
+    public UpdateEmpDetails() {
         initComponents();
-        setExtendedState(JFrame.MAXIMIZED_BOTH);
         UpdateDB();
     }
     
@@ -35,7 +35,7 @@ public class NewUser extends javax.swing.JFrame {
             n1 = stData.getColumnCount();
         }
         catch (Exception ex){
-            JOptionPane.showMessageDialog(this, "Database Connection Error.");
+            JOptionPane.showMessageDialog(this, "Database Connection Error:\n\n" + ex.getMessage());
         }
     }
     
@@ -60,21 +60,18 @@ public class NewUser extends javax.swing.JFrame {
         userPhone = new javax.swing.JTextField();
         userEmail = new javax.swing.JTextField();
         userAddress = new javax.swing.JTextField();
-        jLabel11 = new javax.swing.JLabel();
-        userUName = new javax.swing.JTextField();
         enterDetails = new javax.swing.JButton();
-        userPWord = new javax.swing.JTextField();
         userRole = new javax.swing.JTextField();
         userStatus = new javax.swing.JTextField();
-        jLabel12 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
         rolesList = new javax.swing.JComboBox<>();
         statusList = new javax.swing.JComboBox<>();
+        viewDetails = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
         jLabel10 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
-        searchProducts = new javax.swing.JButton();
+        searchEmp = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -159,12 +156,6 @@ public class NewUser extends javax.swing.JFrame {
 
         userAddress.setFont(new java.awt.Font("Rockwell", 0, 14)); // NOI18N
 
-        jLabel11.setFont(new java.awt.Font("Rockwell", 0, 14)); // NOI18N
-        jLabel11.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel11.setText("Username:");
-
-        userUName.setFont(new java.awt.Font("Rockwell", 0, 14)); // NOI18N
-
         enterDetails.setFont(new java.awt.Font("Rockwell", 0, 14)); // NOI18N
         enterDetails.setText("Enter Details");
         enterDetails.addActionListener(new java.awt.event.ActionListener() {
@@ -173,15 +164,9 @@ public class NewUser extends javax.swing.JFrame {
             }
         });
 
-        userPWord.setFont(new java.awt.Font("Rockwell", 0, 14)); // NOI18N
-
         userRole.setFont(new java.awt.Font("Rockwell", 0, 14)); // NOI18N
 
         userStatus.setFont(new java.awt.Font("Rockwell", 0, 14)); // NOI18N
-
-        jLabel12.setFont(new java.awt.Font("Rockwell", 0, 14)); // NOI18N
-        jLabel12.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel12.setText("Password:");
 
         jLabel13.setFont(new java.awt.Font("Rockwell", 0, 14)); // NOI18N
         jLabel13.setForeground(new java.awt.Color(255, 255, 255));
@@ -191,6 +176,7 @@ public class NewUser extends javax.swing.JFrame {
         jLabel14.setForeground(new java.awt.Color(255, 255, 255));
         jLabel14.setText("Status:");
 
+        rolesList.setFont(new java.awt.Font("Rockwell", 0, 12)); // NOI18N
         rolesList.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Cashier", "Manager" }));
         rolesList.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -198,10 +184,19 @@ public class NewUser extends javax.swing.JFrame {
             }
         });
 
+        statusList.setFont(new java.awt.Font("Rockwell", 0, 12)); // NOI18N
         statusList.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Active", "Inactive" }));
         statusList.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 statusListActionPerformed(evt);
+            }
+        });
+
+        viewDetails.setFont(new java.awt.Font("Rockwell", 0, 14)); // NOI18N
+        viewDetails.setText("View Details");
+        viewDetails.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                viewDetailsActionPerformed(evt);
             }
         });
 
@@ -221,19 +216,14 @@ public class NewUser extends javax.swing.JFrame {
                             .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jLabel5, javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jLabel8, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel11, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel12, javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jLabel13, javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jLabel14, javax.swing.GroupLayout.Alignment.TRAILING))
                         .addGap(18, 18, 18)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(userID, javax.swing.GroupLayout.DEFAULT_SIZE, 400, Short.MAX_VALUE)
                             .addComponent(userFName, javax.swing.GroupLayout.DEFAULT_SIZE, 400, Short.MAX_VALUE)
                             .addComponent(userLName, javax.swing.GroupLayout.DEFAULT_SIZE, 400, Short.MAX_VALUE)
                             .addComponent(userEmail, javax.swing.GroupLayout.DEFAULT_SIZE, 400, Short.MAX_VALUE)
                             .addComponent(userAddress, javax.swing.GroupLayout.DEFAULT_SIZE, 400, Short.MAX_VALUE)
-                            .addComponent(userUName, javax.swing.GroupLayout.DEFAULT_SIZE, 400, Short.MAX_VALUE)
-                            .addComponent(userPWord, javax.swing.GroupLayout.DEFAULT_SIZE, 400, Short.MAX_VALUE)
                             .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                                     .addComponent(userStatus, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 330, Short.MAX_VALUE)
@@ -242,7 +232,11 @@ public class NewUser extends javax.swing.JFrame {
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(rolesList, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(statusList, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addComponent(userPhone))))
+                            .addComponent(userPhone)
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addComponent(userID, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(viewDetails, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
                 .addContainerGap(97, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
@@ -258,7 +252,8 @@ public class NewUser extends javax.swing.JFrame {
                         .addGap(17, 17, 17)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(userID, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(viewDetails, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(userFName, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -277,14 +272,6 @@ public class NewUser extends javax.swing.JFrame {
                             .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(userUName, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(userPWord, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(userRole, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(rolesList, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -295,14 +282,14 @@ public class NewUser extends javax.swing.JFrame {
                     .addComponent(statusList, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(enterDetails, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(16, Short.MAX_VALUE))
+                .addContainerGap(23, Short.MAX_VALUE))
         );
 
         jPanel3.setBackground(new java.awt.Color(0, 102, 102));
 
         jLabel10.setFont(new java.awt.Font("Rockwell", 1, 24)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel10.setText("Add New Employees");
+        jLabel10.setText("Update Employee Details");
 
         jButton1.setFont(new java.awt.Font("Rockwell", 0, 14)); // NOI18N
         jButton1.setText("Employee Details");
@@ -312,11 +299,11 @@ public class NewUser extends javax.swing.JFrame {
             }
         });
 
-        searchProducts.setFont(new java.awt.Font("Rockwell", 0, 14)); // NOI18N
-        searchProducts.setText("Search Employees");
-        searchProducts.addActionListener(new java.awt.event.ActionListener() {
+        searchEmp.setFont(new java.awt.Font("Rockwell", 0, 14)); // NOI18N
+        searchEmp.setText("Search Employees");
+        searchEmp.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                searchProductsActionPerformed(evt);
+                searchEmpActionPerformed(evt);
             }
         });
 
@@ -327,10 +314,10 @@ public class NewUser extends javax.swing.JFrame {
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addGap(16, 16, 16)
                 .addComponent(jLabel10)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 109, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 56, Short.MAX_VALUE)
                 .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(searchProducts, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(searchEmp, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(16, 16, 16))
         );
         jPanel3Layout.setVerticalGroup(
@@ -340,7 +327,7 @@ public class NewUser extends javax.swing.JFrame {
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel10)
                     .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(searchProducts, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(searchEmp, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(15, Short.MAX_VALUE))
         );
 
@@ -374,19 +361,17 @@ public class NewUser extends javax.swing.JFrame {
         try{
             Class.forName("com.mysql.jdbc.Driver");
             sqlConn = DriverManager.getConnection(dataConn, username, password);
-            pst = sqlConn.prepareStatement("insert into users (User_ID , First_Name, Last_Name, Phone_No, Address, Email, Username, Password, Role, Status) value (?,?,?,?,?,?,?,?,?,?)");
-            pst.setString(1, userID.getText());
-            pst.setString(2, userFName.getText());
-            pst.setString(3, userLName.getText());
-            pst.setString(4, userPhone.getText());
-            pst.setString(5, userAddress.getText());
-            pst.setString(6, userEmail.getText());
-            pst.setString(7, userUName.getText());
-            pst.setString(8, userPWord.getText());
-            pst.setString(9, userRole.getText());
-            pst.setString(10, userStatus.getText());
+            pst = sqlConn.prepareStatement("update users set First_Name=?, Last_Name=?, Phone_No=?, Address=?, Email=?, Role=?, Status=? where User_ID=?");
+            pst.setString(1, userFName.getText());
+            pst.setString(2, userLName.getText());
+            pst.setInt(3, Integer.parseInt(userPhone.getText()));
+            pst.setString(4, userAddress.getText());
+            pst.setString(5, userEmail.getText());
+            pst.setString(6, userRole.getText());
+            pst.setString(7, userStatus.getText());
+            pst.setString(8, userID.getText());
             pst.executeUpdate();
-            JOptionPane.showMessageDialog(this, "Employee details have been successfully added to the system.");
+            JOptionPane.showMessageDialog(this, "Employee details have been successfully updated in the system.");
 
             userID.setText("");
             userFName.setText("");
@@ -394,8 +379,6 @@ public class NewUser extends javax.swing.JFrame {
             userPhone.setText("");
             userAddress.setText("");
             userEmail.setText("");
-            userUName.setText("");
-            userPWord.setText("");
             userRole.setText("");
             userStatus.setText("");
         }
@@ -403,16 +386,6 @@ public class NewUser extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, ex);
         }
     }//GEN-LAST:event_enterDetailsActionPerformed
-
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        ViewUsers users = new ViewUsers();
-        users.setVisible(true);
-    }//GEN-LAST:event_jButton1ActionPerformed
-
-    private void searchProductsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchProductsActionPerformed
-        SearchUsers search = new SearchUsers();
-        search.setVisible(true);
-    }//GEN-LAST:event_searchProductsActionPerformed
 
     private void rolesListActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rolesListActionPerformed
         String text01 = (String)rolesList.getSelectedItem();
@@ -423,6 +396,43 @@ public class NewUser extends javax.swing.JFrame {
         String text = (String)statusList.getSelectedItem();
         userStatus.setText(text);
     }//GEN-LAST:event_statusListActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        ViewUsers users = new ViewUsers();
+        users.setVisible(true);
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void searchEmpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchEmpActionPerformed
+        SearchUsers search = new SearchUsers();
+        search.setVisible(true);
+    }//GEN-LAST:event_searchEmpActionPerformed
+
+    private void viewDetailsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewDetailsActionPerformed
+        try{
+            Class.forName("com.mysql.jdbc.Driver");
+            sqlConn = DriverManager.getConnection(dataConn, username, password);
+            pst = sqlConn.prepareStatement("select * from users where User_ID=?");
+            pst.setString(1, userID.getText());
+            rs = pst.executeQuery();
+            
+            if(rs.next()){
+                userID.setText(rs.getString("User_ID"));
+                userFName.setText(rs.getString("First_Name"));
+                userLName.setText(rs.getString("Last_Name"));
+                userPhone.setText(rs.getString("Phone_No"));
+                userAddress.setText(rs.getString("Address"));
+                userEmail.setText(rs.getString("Email"));
+                userRole.setText(rs.getString("Role"));
+                userStatus.setText(rs.getString("Status"));
+            }
+            else{
+                JOptionPane.showMessageDialog(this, "Product you are searching doesn't exists in the system.");
+            }
+        }
+        catch(Exception ex){
+            JOptionPane.showMessageDialog(this, ex);
+        }
+    }//GEN-LAST:event_viewDetailsActionPerformed
 
     /**
      * @param args the command line arguments
@@ -441,20 +451,20 @@ public class NewUser extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(NewUser.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(UpdateEmpDetails.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(NewUser.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(UpdateEmpDetails.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(NewUser.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(UpdateEmpDetails.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(NewUser.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(UpdateEmpDetails.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new NewUser().setVisible(true);
+                new UpdateEmpDetails().setVisible(true);
             }
         });
     }
@@ -465,8 +475,6 @@ public class NewUser extends javax.swing.JFrame {
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel2;
@@ -480,17 +488,16 @@ public class NewUser extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JComboBox<String> rolesList;
-    private javax.swing.JButton searchProducts;
+    private javax.swing.JButton searchEmp;
     private javax.swing.JComboBox<String> statusList;
     private javax.swing.JTextField userAddress;
     private javax.swing.JTextField userEmail;
     private javax.swing.JTextField userFName;
     private javax.swing.JTextField userID;
     private javax.swing.JTextField userLName;
-    private javax.swing.JTextField userPWord;
     private javax.swing.JTextField userPhone;
     private javax.swing.JTextField userRole;
     private javax.swing.JTextField userStatus;
-    private javax.swing.JTextField userUName;
+    private javax.swing.JButton viewDetails;
     // End of variables declaration//GEN-END:variables
 }
