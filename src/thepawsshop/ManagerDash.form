@@ -180,33 +180,22 @@
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" attributes="0">
-                  <EmptySpace min="82" pref="82" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="82" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" alignment="0" attributes="0">
-                          <Group type="103" groupAlignment="1" attributes="0">
-                              <Component id="searchUsers" min="-2" pref="200" max="-2" attributes="0"/>
-                              <Component id="viewProducts" min="-2" pref="200" max="-2" attributes="0"/>
-                              <Component id="updateLogin1" alignment="1" min="-2" pref="200" max="-2" attributes="0"/>
-                          </Group>
-                          <EmptySpace max="32767" attributes="0"/>
-                          <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                              <Component id="viewEmployees" alignment="0" pref="200" max="32767" attributes="0"/>
-                              <Component id="updateLogin" alignment="1" pref="200" max="32767" attributes="0"/>
-                          </Group>
-                      </Group>
-                      <Group type="102" alignment="0" attributes="0">
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="newUser" alignment="0" min="-2" pref="200" max="-2" attributes="0"/>
-                              <Component id="searchProducts" alignment="0" min="-2" pref="200" max="-2" attributes="0"/>
-                          </Group>
-                          <EmptySpace min="-2" pref="167" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="addProducts" max="32767" attributes="0"/>
-                              <Component id="updateProducts" pref="200" max="32767" attributes="0"/>
-                          </Group>
-                      </Group>
+                      <Component id="newUser" max="32767" attributes="0"/>
+                      <Component id="searchProducts" alignment="1" max="32767" attributes="0"/>
+                      <Component id="searchUsers" alignment="1" pref="200" max="32767" attributes="0"/>
+                      <Component id="viewProducts" alignment="1" max="32767" attributes="0"/>
+                      <Component id="updateLogin1" alignment="1" pref="200" max="32767" attributes="0"/>
                   </Group>
-                  <EmptySpace min="71" pref="71" max="-2" attributes="0"/>
+                  <EmptySpace min="167" pref="167" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="updateLogin" pref="200" max="32767" attributes="0"/>
+                      <Component id="updateProducts" alignment="1" max="32767" attributes="0"/>
+                      <Component id="addProducts" alignment="1" max="32767" attributes="0"/>
+                      <Component id="viewEmployees" alignment="0" max="32767" attributes="0"/>
+                  </Group>
+                  <EmptySpace min="-2" pref="71" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -214,28 +203,28 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="viewProducts" alignment="3" min="-2" pref="40" max="-2" attributes="0"/>
-                      <Component id="viewEmployees" alignment="3" min="-2" pref="40" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="viewProducts" min="-2" pref="46" max="-2" attributes="0"/>
+                      <Component id="viewEmployees" min="-2" pref="46" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <EmptySpace type="unrelated" min="-2" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="newUser" alignment="3" min="-2" pref="40" max="-2" attributes="0"/>
                       <Component id="addProducts" alignment="3" min="-2" pref="40" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <EmptySpace type="separate" min="-2" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="searchProducts" alignment="3" min="-2" pref="40" max="-2" attributes="0"/>
                       <Component id="updateProducts" alignment="3" min="-2" pref="40" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <EmptySpace type="separate" min="-2" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="searchUsers" alignment="3" min="-2" pref="40" max="-2" attributes="0"/>
                       <Component id="updateLogin" alignment="3" min="-2" pref="40" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <EmptySpace type="separate" min="-2" max="-2" attributes="0"/>
                   <Component id="updateLogin1" min="-2" pref="40" max="-2" attributes="0"/>
-                  <EmptySpace pref="35" max="32767" attributes="0"/>
+                  <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>

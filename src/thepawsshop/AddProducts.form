@@ -134,30 +134,31 @@
                               <Component id="jLabel3" alignment="1" min="-2" max="-2" attributes="0"/>
                               <Component id="jLabel1" alignment="1" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                              <Component id="productID" min="-2" pref="400" max="-2" attributes="0"/>
-                              <Component id="productName" min="-2" pref="400" max="-2" attributes="0"/>
-                              <Component id="productDesc" min="-2" pref="400" max="-2" attributes="0"/>
-                              <Component id="productWeight" min="-2" pref="400" max="-2" attributes="0"/>
-                              <Component id="productPrice" min="-2" pref="400" max="-2" attributes="0"/>
+                          <EmptySpace type="separate" min="-2" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="productID" pref="400" max="32767" attributes="0"/>
+                              <Component id="productName" pref="400" max="32767" attributes="0"/>
+                              <Component id="productDesc" pref="400" max="32767" attributes="0"/>
+                              <Component id="productWeight" pref="400" max="32767" attributes="0"/>
+                              <Component id="productPrice" pref="400" max="32767" attributes="0"/>
                               <Group type="102" alignment="0" attributes="0">
-                                  <Component id="productCategory" min="-2" pref="250" max="-2" attributes="0"/>
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="categoryList" max="32767" attributes="0"/>
+                                  <Component id="productCategory" pref="250" max="32767" attributes="0"/>
+                                  <EmptySpace min="-2" max="-2" attributes="0"/>
+                                  <Component id="categoryList" pref="108" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                       </Group>
                       <Group type="102" alignment="1" attributes="0">
+                          <EmptySpace min="20" pref="20" max="-2" attributes="0"/>
                           <Component id="jLabel11" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <EmptySpace type="separate" min="-2" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="productQuantity" alignment="1" min="-2" pref="400" max="-2" attributes="0"/>
+                              <Component id="productQuantity" alignment="1" pref="400" max="32767" attributes="0"/>
                               <Component id="enterDetails" alignment="1" min="-2" pref="148" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                   </Group>
-                  <EmptySpace pref="89" max="32767" attributes="0"/>
+                  <EmptySpace min="-2" pref="89" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>

@@ -125,7 +125,10 @@
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace min="-2" pref="104" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="1" attributes="0">
-                      <Component id="enterDetails" alignment="1" min="-2" pref="148" max="-2" attributes="0"/>
+                      <Group type="102" alignment="1" attributes="0">
+                          <EmptySpace pref="371" max="32767" attributes="0"/>
+                          <Component id="enterDetails" min="-2" pref="148" max="-2" attributes="0"/>
+                      </Group>
                       <Group type="102" alignment="1" attributes="0">
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Component id="jLabel7" alignment="1" min="-2" max="-2" attributes="0"/>
@@ -137,33 +140,33 @@
                               <Component id="jLabel13" alignment="1" min="-2" max="-2" attributes="0"/>
                               <Component id="jLabel14" alignment="1" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <EmptySpace type="separate" min="-2" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
                               <Component id="userFName" alignment="0" pref="400" max="32767" attributes="0"/>
                               <Component id="userLName" alignment="0" pref="400" max="32767" attributes="0"/>
                               <Component id="userEmail" alignment="0" pref="400" max="32767" attributes="0"/>
                               <Component id="userAddress" alignment="0" pref="400" max="32767" attributes="0"/>
                               <Group type="102" alignment="0" attributes="0">
-                                  <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                                  <Group type="103" groupAlignment="1" attributes="0">
                                       <Component id="userStatus" alignment="0" pref="330" max="32767" attributes="0"/>
                                       <Component id="userRole" alignment="0" max="32767" attributes="0"/>
                                   </Group>
-                                  <EmptySpace max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="rolesList" alignment="0" min="-2" pref="64" max="-2" attributes="0"/>
-                                      <Component id="statusList" alignment="0" min="-2" pref="64" max="-2" attributes="0"/>
+                                      <Component id="rolesList" alignment="0" pref="64" max="32767" attributes="0"/>
+                                      <Component id="statusList" alignment="0" pref="64" max="32767" attributes="0"/>
                                   </Group>
                               </Group>
                               <Component id="userPhone" alignment="0" max="32767" attributes="0"/>
                               <Group type="102" alignment="0" attributes="0">
-                                  <Component id="userID" min="-2" pref="250" max="-2" attributes="0"/>
-                                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                                  <Component id="viewDetails" max="32767" attributes="0"/>
+                                  <Component id="userID" max="32767" attributes="0"/>
+                                  <EmptySpace type="separate" min="-2" max="-2" attributes="0"/>
+                                  <Component id="viewDetails" min="-2" pref="214" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                       </Group>
                   </Group>
-                  <EmptySpace pref="97" max="32767" attributes="0"/>
+                  <EmptySpace min="-2" pref="97" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
