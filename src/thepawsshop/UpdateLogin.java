@@ -254,9 +254,7 @@ public class UpdateLogin extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void backActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backActionPerformed
-        StartPage start = new StartPage();
-        start.setVisible(true);
-        this.hide();
+        this.dispose();
     }//GEN-LAST:event_backActionPerformed
 
     private void submitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitActionPerformed

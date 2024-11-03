@@ -45,7 +45,7 @@ public class ManagerDash extends javax.swing.JFrame {
         viewEmployees = new javax.swing.JButton();
         searchUsers = new javax.swing.JButton();
         updateLogin = new javax.swing.JButton();
-        updateLogin1 = new javax.swing.JButton();
+        updateStatus = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -193,11 +193,11 @@ public class ManagerDash extends javax.swing.JFrame {
             }
         });
 
-        updateLogin1.setFont(new java.awt.Font("Rockwell", 0, 14)); // NOI18N
-        updateLogin1.setText("Update Employee Status");
-        updateLogin1.addActionListener(new java.awt.event.ActionListener() {
+        updateStatus.setFont(new java.awt.Font("Rockwell", 0, 14)); // NOI18N
+        updateStatus.setText("Update Employee Details");
+        updateStatus.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                updateLogin1ActionPerformed(evt);
+                updateStatusActionPerformed(evt);
             }
         });
 
@@ -212,7 +212,7 @@ public class ManagerDash extends javax.swing.JFrame {
                     .addComponent(searchProducts, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(searchUsers, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
                     .addComponent(viewProducts, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(updateLogin1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE))
+                    .addComponent(updateStatus, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE))
                 .addGap(167, 167, 167)
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(updateLogin, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
@@ -241,7 +241,7 @@ public class ManagerDash extends javax.swing.JFrame {
                     .addComponent(searchUsers, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(updateLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addComponent(updateLogin1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(updateStatus, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(35, 35, 35))
         );
 
@@ -270,7 +270,7 @@ public class ManagerDash extends javax.swing.JFrame {
     private void backActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backActionPerformed
         StartPage start = new StartPage();
         start.setVisible(true);
-        this.hide();
+        this.dispose();
     }//GEN-LAST:event_backActionPerformed
 
     private void viewProductsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewProductsActionPerformed
@@ -286,7 +286,7 @@ public class ManagerDash extends javax.swing.JFrame {
     private void logoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logoutActionPerformed
         StartPage start = new StartPage();
         start.setVisible(true);
-        this.hide();
+        this.dispose();
     }//GEN-LAST:event_logoutActionPerformed
 
     private void newUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_newUserActionPerformed
@@ -319,9 +319,10 @@ public class ManagerDash extends javax.swing.JFrame {
         login.setVisible(true);
     }//GEN-LAST:event_updateLoginActionPerformed
 
-    private void updateLogin1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateLogin1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_updateLogin1ActionPerformed
+    private void updateStatusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateStatusActionPerformed
+        UpdateEmpDetails update = new UpdateEmpDetails();
+        update.setVisible(true);
+    }//GEN-LAST:event_updateStatusActionPerformed
 
     /**
      * @param args the command line arguments
@@ -372,8 +373,8 @@ public class ManagerDash extends javax.swing.JFrame {
     private javax.swing.JButton searchProducts;
     private javax.swing.JButton searchUsers;
     private javax.swing.JButton updateLogin;
-    private javax.swing.JButton updateLogin1;
     private javax.swing.JButton updateProducts;
+    private javax.swing.JButton updateStatus;
     private javax.swing.JButton viewEmployees;
     private javax.swing.JButton viewProducts;
     // End of variables declaration//GEN-END:variables

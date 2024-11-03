@@ -206,7 +206,7 @@ public class Login extends javax.swing.JFrame {
     private void backActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backActionPerformed
         StartPage start = new StartPage();
         start.setVisible(true);
-        this.hide();
+        this.dispose();
     }//GEN-LAST:event_backActionPerformed
 
     private void loginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginActionPerformed
@@ -246,12 +246,12 @@ public class Login extends javax.swing.JFrame {
                     if(rs.next() == true){
                         CashierDash cashierDash = new CashierDash();
                         cashierDash.setVisible(true);
-                        this.hide();
+                        this.dispose();
                     }
                     else{
                         ManagerDash managerDash = new ManagerDash();
                         managerDash.setVisible(true);
-                        this.hide();
+                        this.dispose();
                     }
                 }
                 else{
@@ -314,12 +314,12 @@ public class Login extends javax.swing.JFrame {
                         if(rs.next() == true){
                             CashierDash cashierDash = new CashierDash();
                             cashierDash.setVisible(true);
-                            this.hide();
+                            this.dispose();
                         }
                         else{
                             ManagerDash managerDash = new ManagerDash();
                             managerDash.setVisible(true);
-                            this.hide();
+                            this.dispose();
                         }
                     }
                     else{

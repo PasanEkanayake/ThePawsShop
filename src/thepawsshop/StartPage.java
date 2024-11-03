@@ -119,7 +119,7 @@ public class StartPage extends javax.swing.JFrame {
     private void loginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginActionPerformed
         Login lg = new Login();
         lg.setVisible(true);
-        this.hide();
+        this.dispose();
     }//GEN-LAST:event_loginActionPerformed
 
     /**

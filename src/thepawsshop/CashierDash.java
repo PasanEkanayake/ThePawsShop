@@ -219,7 +219,7 @@ public class CashierDash extends javax.swing.JFrame {
     private void backActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backActionPerformed
         StartPage start = new StartPage();
         start.setVisible(true);
-        this.hide();
+        this.dispose();
     }//GEN-LAST:event_backActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
@@ -235,7 +235,7 @@ public class CashierDash extends javax.swing.JFrame {
     private void logoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logoutActionPerformed
         StartPage start = new StartPage();
         start.setVisible(true);
-        this.hide();
+        this.dispose();
     }//GEN-LAST:event_logoutActionPerformed
 
     private void searchProductsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchProductsActionPerformed
