@@ -35,7 +35,7 @@ public class Login extends javax.swing.JFrame {
             n1 = stData.getColumnCount();
         }
         catch (Exception ex){
-            JOptionPane.showMessageDialog(this, "Database Connection Error.");
+            JOptionPane.showMessageDialog(this, "Database Connection Error:\n\n" + ex.getMessage());
         }
     }
 
@@ -207,7 +207,7 @@ public class Login extends javax.swing.JFrame {
             rs = pst.executeQuery();
             
             if(rs.next() == false){
-                JOptionPane.showMessageDialog(this, "User not found.\nPlease Try again.");
+                JOptionPane.showMessageDialog(this, "User not found.\n\nPlease Try again.");
                 uName.setText("");
                 pWord.setText("");
             }
@@ -240,7 +240,7 @@ public class Login extends javax.swing.JFrame {
                     }
                 }
                 else{
-                    JOptionPane.showMessageDialog(this, "User no longer works at the shop.\nPlease Try again.");
+                    JOptionPane.showMessageDialog(this, "User no longer works at the shop.\n\nPlease Try again.");
                     uName.setText("");
                     pWord.setText("");
                 }
@@ -248,7 +248,7 @@ public class Login extends javax.swing.JFrame {
             
         }
         catch(Exception ex){
-            JOptionPane.showMessageDialog(this, "Database connection failed.");
+            JOptionPane.showMessageDialog(this, "Database connection failed:\n\n" + ex.getMessage());
         }
     }//GEN-LAST:event_loginActionPerformed
 
@@ -275,7 +275,7 @@ public class Login extends javax.swing.JFrame {
                 rs = pst.executeQuery();
 
                 if(rs.next() == false){
-                    JOptionPane.showMessageDialog(this, "User not found.\nPlease Try again.");
+                    JOptionPane.showMessageDialog(this, "User not found.\n\nPlease Try again.");
                     uName.setText("");
                     pWord.setText("");
                 }
@@ -308,7 +308,7 @@ public class Login extends javax.swing.JFrame {
                         }
                     }
                     else{
-                        JOptionPane.showMessageDialog(this, "User no longer works at the shop.\nPlease Try again.");
+                        JOptionPane.showMessageDialog(this, "User no longer works at the shop.\n\nPlease Try again.");
                         uName.setText("");
                         pWord.setText("");
                     }
@@ -316,7 +316,7 @@ public class Login extends javax.swing.JFrame {
             
             }
             catch(Exception ex){
-                JOptionPane.showMessageDialog(this, "Database connection failed.");
+                JOptionPane.showMessageDialog(this, "Database connection failed:\n\n" + ex.getMessage());
             }
         }
     }//GEN-LAST:event_pWordKeyPressed
