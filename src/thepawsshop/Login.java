@@ -1,5 +1,6 @@
 package thepawsshop;
 
+import java.awt.event.KeyEvent;
 import java.sql.*;
 import javax.swing.JOptionPane;
 import javax.swing.JFrame;
@@ -118,12 +119,19 @@ public class Login extends javax.swing.JFrame {
             }
         });
 
+        showHide.setBackground(new java.awt.Color(0, 102, 102));
         showHide.setFont(new java.awt.Font("Rockwell", 0, 12)); // NOI18N
         showHide.setForeground(new java.awt.Color(255, 255, 255));
         showHide.setText("Show Password");
         showHide.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 showHideActionPerformed(evt);
+            }
+        });
+
+        pWord.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                pWordKeyPressed(evt);
             }
         });
 
@@ -252,6 +260,66 @@ public class Login extends javax.swing.JFrame {
             pWord.setEchoChar('*');
         }
     }//GEN-LAST:event_showHideActionPerformed
+
+    private void pWordKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_pWordKeyPressed
+        if(evt.getKeyCode() == KeyEvent.VK_ENTER){
+            try{
+            
+                Class.forName("com.mysql.jdbc.Driver");
+                sqlConn = DriverManager.getConnection(dataConn, username, password);
+                pst = sqlConn.prepareStatement("select Username, Password from users WHERE Username=? and Password=?");
+                String uNameTemp = uName.getText();
+                String pWordTemp = pWord.getText();
+                pst.setString(1, uNameTemp);
+                pst.setString(2, pWordTemp);
+                rs = pst.executeQuery();
+
+                if(rs.next() == false){
+                    JOptionPane.showMessageDialog(this, "User not found.\nPlease Try again.");
+                    uName.setText("");
+                    pWord.setText("");
+                }
+                else{
+                    pst = sqlConn.prepareStatement("select Status from users WHERE Username=? and Password=? and Status=?");
+                    String stat = "Active";
+                    pst.setString(1, uNameTemp);
+                    pst.setString(2, pWordTemp);
+                    pst.setString(3, stat);
+                    rs = pst.executeQuery();
+
+                    if(rs.next() == true){
+
+                        pst = sqlConn.prepareStatement("select Role from users WHERE Username=? and Password=? and Role=?");
+                        String role = "Cashier";
+                        pst.setString(1, uNameTemp);
+                        pst.setString(2, pWordTemp);
+                        pst.setString(3, role);
+                        rs = pst.executeQuery();
+
+                        if(rs.next() == true){
+                            CashierDash cashierDash = new CashierDash();
+                            cashierDash.setVisible(true);
+                            this.hide();
+                        }
+                        else{
+                            ManagerDash managerDash = new ManagerDash();
+                            managerDash.setVisible(true);
+                            this.hide();
+                        }
+                    }
+                    else{
+                        JOptionPane.showMessageDialog(this, "User no longer works at the shop.\nPlease Try again.");
+                        uName.setText("");
+                        pWord.setText("");
+                    }
+                }
+            
+            }
+            catch(Exception ex){
+                JOptionPane.showMessageDialog(this, "Database connection failed.");
+            }
+        }
+    }//GEN-LAST:event_pWordKeyPressed
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */

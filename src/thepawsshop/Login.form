@@ -196,6 +196,9 @@
         </Component>
         <Component class="javax.swing.JCheckBox" name="showHide">
           <Properties>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="66" green="66" red="0" type="rgb"/>
+            </Property>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Rockwell" size="12" style="0"/>
             </Property>
@@ -209,6 +212,9 @@
           </Events>
         </Component>
         <Component class="javax.swing.JPasswordField" name="pWord">
+          <Events>
+            <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="pWordKeyPressed"/>
+          </Events>
         </Component>
       </SubComponents>
     </Container>

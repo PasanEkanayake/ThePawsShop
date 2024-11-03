@@ -1,5 +1,6 @@
 package thepawsshop;
 
+import java.awt.event.KeyEvent;
 import java.sql.*;
 import javax.swing.JOptionPane;
 import javax.swing.JFrame;
@@ -160,6 +161,11 @@ public class SearchUsers extends javax.swing.JFrame {
         jLabel3.setText("Search with: First Name / Last Name / User ID");
 
         searchText.setFont(new java.awt.Font("Rockwell", 0, 14)); // NOI18N
+        searchText.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                searchTextKeyPressed(evt);
+            }
+        });
 
         search.setFont(new java.awt.Font("Rockwell", 0, 14)); // NOI18N
         search.setText("Search");
@@ -251,6 +257,13 @@ public class SearchUsers extends javax.swing.JFrame {
         clearTable();
         Show(searchText.getText());
     }//GEN-LAST:event_searchActionPerformed
+
+    private void searchTextKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_searchTextKeyPressed
+        if(evt.getKeyCode() == KeyEvent.VK_ENTER){
+            clearTable();
+            Show(searchText.getText());
+        }
+    }//GEN-LAST:event_searchTextKeyPressed
 
     /**
      * @param args the command line arguments

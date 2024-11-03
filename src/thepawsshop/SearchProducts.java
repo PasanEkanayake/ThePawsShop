@@ -6,6 +6,7 @@ import javax.swing.JFrame;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableRowSorter;
 import javax.swing.RowFilter;
+import java.awt.event.KeyEvent;
 
 public class SearchProducts extends javax.swing.JFrame {
 
@@ -159,6 +160,11 @@ public class SearchProducts extends javax.swing.JFrame {
         jLabel3.setText("Search with: Product ID or Product Name or Product Category");
 
         productName.setFont(new java.awt.Font("Rockwell", 0, 14)); // NOI18N
+        productName.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                productNameKeyPressed(evt);
+            }
+        });
 
         search.setFont(new java.awt.Font("Rockwell", 0, 14)); // NOI18N
         search.setText("Search");
@@ -250,6 +256,13 @@ public class SearchProducts extends javax.swing.JFrame {
         clearTable();
         Show(productName.getText());
     }//GEN-LAST:event_searchActionPerformed
+
+    private void productNameKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_productNameKeyPressed
+        if(evt.getKeyCode() == KeyEvent.VK_ENTER){
+            clearTable();
+            Show(productName.getText());
+        }
+    }//GEN-LAST:event_productNameKeyPressed
 
     /**
      * @param args the command line arguments
