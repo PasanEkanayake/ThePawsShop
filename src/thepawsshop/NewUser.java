@@ -17,7 +17,7 @@ public class NewUser extends javax.swing.JFrame {
     PreparedStatement pst = null;
     ResultSet rs = null;
     
-    int n1, n2;
+    private int n1, n2;
     
     public NewUser() {
         initComponents();
