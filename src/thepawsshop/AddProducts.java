@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
 package thepawsshop;
 
 import java.sql.*;
@@ -13,10 +9,6 @@ import javax.swing.RowFilter;
 import java.util.HashSet;
 import java.util.Set;
 
-/**
- *
- * @author Pasan Ekanayake
- */
 public class AddProducts extends javax.swing.JFrame {
 
     private static final String username = "root";
