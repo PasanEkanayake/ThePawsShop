@@ -384,36 +384,44 @@ public class NewUser extends javax.swing.JFrame {
     }//GEN-LAST:event_backActionPerformed
 
     private void enterDetailsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_enterDetailsActionPerformed
-        try{
-            Class.forName("com.mysql.jdbc.Driver");
-            sqlConn = DriverManager.getConnection(dataConn, username, password);
-            pst = sqlConn.prepareStatement("insert into users (User_ID , First_Name, Last_Name, Phone_No, Address, Email, Username, Password, Role, Status) value (?,?,?,?,?,?,?,?,?,?)");
-            pst.setString(1, userID.getText());
-            pst.setString(2, userFName.getText());
-            pst.setString(3, userLName.getText());
-            pst.setString(4, userPhone.getText());
-            pst.setString(5, userAddress.getText());
-            pst.setString(6, userEmail.getText());
-            pst.setString(7, userUName.getText());
-            pst.setString(8, userPWord.getText());
-            pst.setString(9, userRole.getText());
-            pst.setString(10, userStatus.getText());
-            pst.executeUpdate();
-            JOptionPane.showMessageDialog(this, "Employee details have been successfully added to the system.");
+        
+        String userPass = userPWord.getText();
+        
+        if(userPass.length() >= 8){
+            try{
+                Class.forName("com.mysql.jdbc.Driver");
+                sqlConn = DriverManager.getConnection(dataConn, username, password);
+                pst = sqlConn.prepareStatement("insert into users (User_ID , First_Name, Last_Name, Phone_No, Address, Email, Username, Password, Role, Status) value (?,?,?,?,?,?,?,?,?,?)");
+                pst.setString(1, userID.getText());
+                pst.setString(2, userFName.getText());
+                pst.setString(3, userLName.getText());
+                pst.setString(4, userPhone.getText());
+                pst.setString(5, userAddress.getText());
+                pst.setString(6, userEmail.getText());
+                pst.setString(7, userUName.getText());
+                pst.setString(8, userPWord.getText());
+                pst.setString(9, userRole.getText());
+                pst.setString(10, userStatus.getText());
+                pst.executeUpdate();
+                JOptionPane.showMessageDialog(this, "Employee details have been successfully added to the system.");
 
-            userID.setText("");
-            userFName.setText("");
-            userLName.setText("");
-            userPhone.setText("");
-            userAddress.setText("");
-            userEmail.setText("");
-            userUName.setText("");
-            userPWord.setText("");
-            userRole.setText("");
-            userStatus.setText("");
+                userID.setText("");
+                userFName.setText("");
+                userLName.setText("");
+                userPhone.setText("");
+                userAddress.setText("");
+                userEmail.setText("");
+                userUName.setText("");
+                userPWord.setText("");
+                userRole.setText("");
+                userStatus.setText("");
+            }
+            catch(Exception ex){
+                JOptionPane.showMessageDialog(this, ex);
+            }
         }
-        catch(Exception ex){
-            JOptionPane.showMessageDialog(this, ex);
+        else{
+            JOptionPane.showMessageDialog(this, "Entered Password Must Contain At least 08 Characters.");
         }
     }//GEN-LAST:event_enterDetailsActionPerformed
 
