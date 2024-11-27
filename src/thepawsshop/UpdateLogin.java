@@ -299,23 +299,28 @@ public class UpdateLogin extends javax.swing.JFrame {
                     newPWord.setText("");
                 }
                 else{
-                    pst = sqlConn.prepareStatement("update users set Password=? where Username=?");
-                    pst.setString(1, newPass);
-                    pst.setString(2, uNameTemp);
+                    if(newPass.length() >= 8 ){
+                        pst = sqlConn.prepareStatement("update users set Password=? where Username=?");
+                        pst.setString(1, newPass);
+                        pst.setString(2, uNameTemp);
 
-                    int updateCount = pst.executeUpdate();
+                        int updateCount = pst.executeUpdate();
 
-                    if(updateCount > 0){
-                        JOptionPane.showMessageDialog(this, "Password updated successfully.");
-                        Login login = new Login();
-                        login.setVisible(true);
-                        this.dispose();
+                        if(updateCount > 0){
+                            JOptionPane.showMessageDialog(this, "Password updated successfully.");
+                            Login login = new Login();
+                            login.setVisible(true);
+                            this.dispose();
+                        }
+                        else{
+                            JOptionPane.showMessageDialog(this, "Password update failed. Please try again.");
+                            oldUName.setText("");
+                            oldPWord.setText("");
+                            newPWord.setText("");
+                        }
                     }
                     else{
-                        JOptionPane.showMessageDialog(this, "Password update failed. Please try again.");
-                        oldUName.setText("");
-                        oldPWord.setText("");
-                        newPWord.setText("");
+                        JOptionPane.showMessageDialog(this, "Entered Password Must Contain At least 08 Characters.");
                     }
                 }
             }
