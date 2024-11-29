@@ -56,9 +56,9 @@ public class NewUser extends javax.swing.JFrame {
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         userID = new javax.swing.JTextField();
-        userFName = new javax.swing.JTextField();
-        userLName = new javax.swing.JTextField();
-        userPhone = new javax.swing.JTextField();
+        firstName = new javax.swing.JTextField();
+        lastName = new javax.swing.JTextField();
+        phoneNumber = new javax.swing.JTextField();
         userEmail = new javax.swing.JTextField();
         userAddress = new javax.swing.JTextField();
         jLabel11 = new javax.swing.JLabel();
@@ -162,11 +162,11 @@ public class NewUser extends javax.swing.JFrame {
 
         userID.setFont(new java.awt.Font("Rockwell", 0, 14)); // NOI18N
 
-        userFName.setFont(new java.awt.Font("Rockwell", 0, 14)); // NOI18N
+        firstName.setFont(new java.awt.Font("Rockwell", 0, 14)); // NOI18N
 
-        userLName.setFont(new java.awt.Font("Rockwell", 0, 14)); // NOI18N
+        lastName.setFont(new java.awt.Font("Rockwell", 0, 14)); // NOI18N
 
-        userPhone.setFont(new java.awt.Font("Rockwell", 0, 14)); // NOI18N
+        phoneNumber.setFont(new java.awt.Font("Rockwell", 0, 14)); // NOI18N
 
         userEmail.setFont(new java.awt.Font("Rockwell", 0, 14)); // NOI18N
 
@@ -241,8 +241,8 @@ public class NewUser extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(userID, javax.swing.GroupLayout.DEFAULT_SIZE, 400, Short.MAX_VALUE)
-                            .addComponent(userFName, javax.swing.GroupLayout.DEFAULT_SIZE, 400, Short.MAX_VALUE)
-                            .addComponent(userLName, javax.swing.GroupLayout.DEFAULT_SIZE, 400, Short.MAX_VALUE)
+                            .addComponent(firstName, javax.swing.GroupLayout.DEFAULT_SIZE, 400, Short.MAX_VALUE)
+                            .addComponent(lastName, javax.swing.GroupLayout.DEFAULT_SIZE, 400, Short.MAX_VALUE)
                             .addComponent(userEmail, javax.swing.GroupLayout.DEFAULT_SIZE, 400, Short.MAX_VALUE)
                             .addComponent(userAddress, javax.swing.GroupLayout.DEFAULT_SIZE, 400, Short.MAX_VALUE)
                             .addComponent(userUName, javax.swing.GroupLayout.DEFAULT_SIZE, 400, Short.MAX_VALUE)
@@ -255,7 +255,7 @@ public class NewUser extends javax.swing.JFrame {
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(rolesList, 0, 313, Short.MAX_VALUE)
                                     .addComponent(statusList, 0, 313, Short.MAX_VALUE)))
-                            .addComponent(userPhone))))
+                            .addComponent(phoneNumber))))
                 .addGap(97, 97, 97))
         );
         jPanel2Layout.setVerticalGroup(
@@ -274,15 +274,15 @@ public class NewUser extends javax.swing.JFrame {
                             .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(userFName, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(firstName, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(userLName, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lastName, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(userPhone, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(phoneNumber, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -393,9 +393,9 @@ public class NewUser extends javax.swing.JFrame {
                 sqlConn = DriverManager.getConnection(dataConn, username, password);
                 pst = sqlConn.prepareStatement("insert into users (User_ID , First_Name, Last_Name, Phone_No, Address, Email, Username, Password, Role, Status) value (?,?,?,?,?,?,?,?,?,?)");
                 pst.setString(1, userID.getText());
-                pst.setString(2, userFName.getText());
-                pst.setString(3, userLName.getText());
-                pst.setString(4, userPhone.getText());
+                pst.setString(2, firstName.getText());
+                pst.setString(3, lastName.getText());
+                pst.setString(4, phoneNumber.getText());
                 pst.setString(5, userAddress.getText());
                 pst.setString(6, userEmail.getText());
                 pst.setString(7, userUName.getText());
@@ -406,9 +406,9 @@ public class NewUser extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(this, "Employee details have been successfully added to the system.");
 
                 userID.setText("");
-                userFName.setText("");
-                userLName.setText("");
-                userPhone.setText("");
+                firstName.setText("");
+                lastName.setText("");
+                phoneNumber.setText("");
                 userAddress.setText("");
                 userEmail.setText("");
                 userUName.setText("");
@@ -488,6 +488,7 @@ public class NewUser extends javax.swing.JFrame {
     private javax.swing.JButton back;
     private javax.swing.JButton btnExit;
     private javax.swing.JButton enterDetails;
+    private javax.swing.JTextField firstName;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
@@ -505,16 +506,15 @@ public class NewUser extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
+    private javax.swing.JTextField lastName;
+    private javax.swing.JTextField phoneNumber;
     private javax.swing.JComboBox<String> rolesList;
     private javax.swing.JButton searchProducts;
     private javax.swing.JComboBox<String> statusList;
     private javax.swing.JTextField userAddress;
     private javax.swing.JTextField userEmail;
-    private javax.swing.JTextField userFName;
     private javax.swing.JTextField userID;
-    private javax.swing.JTextField userLName;
     private javax.swing.JTextField userPWord;
-    private javax.swing.JTextField userPhone;
     private javax.swing.JTextField userRole;
     private javax.swing.JTextField userStatus;
     private javax.swing.JTextField userUName;
