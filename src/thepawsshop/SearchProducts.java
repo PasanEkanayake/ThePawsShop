@@ -21,9 +21,11 @@ public class SearchProducts extends javax.swing.JFrame {
     int n1, n2;
     
     public SearchProducts() {
+        
         initComponents();
         setExtendedState(JFrame.MAXIMIZED_BOTH);
         UpdateDB();
+        
     }
     
     public void UpdateDB(){
